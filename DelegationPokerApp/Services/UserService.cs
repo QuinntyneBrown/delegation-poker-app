@@ -8,23 +8,23 @@ using DelegationPokerApp.Models;
 
 namespace DelegationPokerApp.Services
 {
-    public class TeamMemberService : ITeamMemberService
+    public class UserService : IUserService
     {
-        public TeamMemberService(IUow uow, ICacheProvider cacheProvider)
+        public UserService(IUow uow, ICacheProvider cacheProvider)
         {
             this.uow = uow;
-            this.repository = uow.TeamMembers;
+            this.repository = uow.Users;
             this.cache = cacheProvider.GetCache();
         }
 
-        public TeamMemberAddOrUpdateResponseDto AddOrUpdate(TeamMemberAddOrUpdateRequestDto request)
+        public UserAddOrUpdateResponseDto AddOrUpdate(UserAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
-            if (entity == null) repository.Add(entity = new TeamMember());
+            if (entity == null) repository.Add(entity = new User());
             entity.Name = request.Name;
             uow.SaveChanges();
-            return new TeamMemberAddOrUpdateResponseDto(entity);
+            return new UserAddOrUpdateResponseDto(entity);
         }
 
         public dynamic Remove(int id)
@@ -35,22 +35,22 @@ namespace DelegationPokerApp.Services
             return id;
         }
 
-        public ICollection<TeamMemberDto> Get()
+        public ICollection<UserDto> Get()
         {
-            ICollection<TeamMemberDto> response = new HashSet<TeamMemberDto>();
+            ICollection<UserDto> response = new HashSet<UserDto>();
             var entities = repository.GetAll().Where(x => x.IsDeleted == false).ToList();
-            foreach(var entity in entities) { response.Add(new TeamMemberDto(entity)); }    
+            foreach(var entity in entities) { response.Add(new UserDto(entity)); }    
             return response;
         }
 
 
-        public TeamMemberDto GetById(int id)
+        public UserDto GetById(int id)
         {
-            return new TeamMemberDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
+            return new UserDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
         }
 
         protected readonly IUow uow;
-        protected readonly IRepository<TeamMember> repository;
+        protected readonly IRepository<User> repository;
         protected readonly ICache cache;
     }
 }

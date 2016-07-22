@@ -20,7 +20,18 @@ namespace DelegationPokerApp
             container.RegisterType<ICacheProvider, CacheProvider>();
             container.RegisterType<IEncryptionService, EncryptionService>();
             container.RegisterType<ILogger, Logger>();
+
+            container.RegisterType<IAppPropertyService, AppPropertyService>();
+            container.RegisterType<IDelegationBoardService, DelegationBoardService>();
+            container.RegisterType<IDelegationBoardItemService, DelegationBoardItemService>();
+            container.RegisterType<IDelegationLevelService, DelegationLevelService>();
+            container.RegisterType<IDigitalAssetService, DigitalAssetService>();
+            container.RegisterType<IRoleService, RoleService>();
+            container.RegisterType<ISituationService, SituationService>();
+            container.RegisterType<ITeamService, TeamService>();
             container.RegisterType<ITeamMemberService, TeamMemberService>();
+            container.RegisterType<IUserService, UserService>();
+
             container.RegisterInstance(AuthConfiguration.LazyConfig);            
             return container;
         }

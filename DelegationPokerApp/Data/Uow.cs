@@ -1,3 +1,4 @@
+using DelegationPokerApp.Models;
 using System;
 
 namespace DelegationPokerApp.Data
@@ -25,8 +26,16 @@ namespace DelegationPokerApp.Data
             RepositoryProvider = repositoryProvider;
         }
 
-        public IRepository<Models.TeamMember> TeamMembers { get { return GetStandardRepo<Models.TeamMember>(); } }
-        
+        public IRepository<AppProperty> AppProperties { get { return GetStandardRepo<Models.AppProperty>(); } }
+        public IRepository<DelegationBoard> DelegationBoards { get { return GetStandardRepo<Models.DelegationBoard>(); } }
+        public IRepository<DelegationBoardItem> DelegationBoardItems { get { return GetStandardRepo<Models.DelegationBoardItem>(); } }
+        public IRepository<DelegationLevel> DelegationLevels { get { return GetStandardRepo<Models.DelegationLevel>(); } }
+        public IRepository<DigitalAsset> DigitalAssets { get { return GetStandardRepo<Models.DigitalAsset>(); } }
+        public IRepository<Role> Roles { get { return GetStandardRepo<Models.Role>(); } }
+        public IRepository<Situation> Situations { get { return GetStandardRepo<Models.Situation>(); } }
+        public IRepository<Team> Teams { get { return GetStandardRepo<Models.Team>(); } }
+        public IRepository<TeamMember> TeamMembers { get { return GetStandardRepo<Models.TeamMember>(); } }
+        public IRepository<User> Users { get { return GetStandardRepo<Models.User>(); } }
 
         protected void ConfigureDbContext(IDbContext dbContext)
         {

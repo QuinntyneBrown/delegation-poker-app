@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DelegationPokerApp.Models
 {
-    class Team
+    public class Team
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<TeamMember> TeamMembers { get; set; } = new HashSet<TeamMember>();
+        public bool IsDeleted { get; set; }
     }
 }

@@ -8,23 +8,23 @@ using DelegationPokerApp.Models;
 
 namespace DelegationPokerApp.Services
 {
-    public class TeamMemberService : ITeamMemberService
+    public class DelegationLevelService : IDelegationLevelService
     {
-        public TeamMemberService(IUow uow, ICacheProvider cacheProvider)
+        public DelegationLevelService(IUow uow, ICacheProvider cacheProvider)
         {
             this.uow = uow;
-            this.repository = uow.TeamMembers;
+            this.repository = uow.DelegationLevels;
             this.cache = cacheProvider.GetCache();
         }
 
-        public TeamMemberAddOrUpdateResponseDto AddOrUpdate(TeamMemberAddOrUpdateRequestDto request)
+        public DelegationLevelAddOrUpdateResponseDto AddOrUpdate(DelegationLevelAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
-            if (entity == null) repository.Add(entity = new TeamMember());
+            if (entity == null) repository.Add(entity = new DelegationLevel());
             entity.Name = request.Name;
             uow.SaveChanges();
-            return new TeamMemberAddOrUpdateResponseDto(entity);
+            return new DelegationLevelAddOrUpdateResponseDto(entity);
         }
 
         public dynamic Remove(int id)
@@ -35,22 +35,22 @@ namespace DelegationPokerApp.Services
             return id;
         }
 
-        public ICollection<TeamMemberDto> Get()
+        public ICollection<DelegationLevelDto> Get()
         {
-            ICollection<TeamMemberDto> response = new HashSet<TeamMemberDto>();
+            ICollection<DelegationLevelDto> response = new HashSet<DelegationLevelDto>();
             var entities = repository.GetAll().Where(x => x.IsDeleted == false).ToList();
-            foreach(var entity in entities) { response.Add(new TeamMemberDto(entity)); }    
+            foreach(var entity in entities) { response.Add(new DelegationLevelDto(entity)); }    
             return response;
         }
 
 
-        public TeamMemberDto GetById(int id)
+        public DelegationLevelDto GetById(int id)
         {
-            return new TeamMemberDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
+            return new DelegationLevelDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
         }
 
         protected readonly IUow uow;
-        protected readonly IRepository<TeamMember> repository;
+        protected readonly IRepository<DelegationLevel> repository;
         protected readonly ICache cache;
     }
 }

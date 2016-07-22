@@ -8,23 +8,23 @@ using DelegationPokerApp.Models;
 
 namespace DelegationPokerApp.Services
 {
-    public class TeamMemberService : ITeamMemberService
+    public class DigitalAssetService : IDigitalAssetService
     {
-        public TeamMemberService(IUow uow, ICacheProvider cacheProvider)
+        public DigitalAssetService(IUow uow, ICacheProvider cacheProvider)
         {
             this.uow = uow;
-            this.repository = uow.TeamMembers;
+            this.repository = uow.DigitalAssets;
             this.cache = cacheProvider.GetCache();
         }
 
-        public TeamMemberAddOrUpdateResponseDto AddOrUpdate(TeamMemberAddOrUpdateRequestDto request)
+        public DigitalAssetAddOrUpdateResponseDto AddOrUpdate(DigitalAssetAddOrUpdateRequestDto request)
         {
             var entity = repository.GetAll()
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
-            if (entity == null) repository.Add(entity = new TeamMember());
+            if (entity == null) repository.Add(entity = new DigitalAsset());
             entity.Name = request.Name;
             uow.SaveChanges();
-            return new TeamMemberAddOrUpdateResponseDto(entity);
+            return new DigitalAssetAddOrUpdateResponseDto(entity);
         }
 
         public dynamic Remove(int id)
@@ -35,22 +35,22 @@ namespace DelegationPokerApp.Services
             return id;
         }
 
-        public ICollection<TeamMemberDto> Get()
+        public ICollection<DigitalAssetDto> Get()
         {
-            ICollection<TeamMemberDto> response = new HashSet<TeamMemberDto>();
+            ICollection<DigitalAssetDto> response = new HashSet<DigitalAssetDto>();
             var entities = repository.GetAll().Where(x => x.IsDeleted == false).ToList();
-            foreach(var entity in entities) { response.Add(new TeamMemberDto(entity)); }    
+            foreach(var entity in entities) { response.Add(new DigitalAssetDto(entity)); }    
             return response;
         }
 
 
-        public TeamMemberDto GetById(int id)
+        public DigitalAssetDto GetById(int id)
         {
-            return new TeamMemberDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
+            return new DigitalAssetDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
         }
 
         protected readonly IUow uow;
-        protected readonly IRepository<TeamMember> repository;
+        protected readonly IRepository<DigitalAsset> repository;
         protected readonly ICache cache;
     }
 }

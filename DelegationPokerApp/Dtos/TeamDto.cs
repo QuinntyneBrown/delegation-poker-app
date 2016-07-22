@@ -1,14 +1,14 @@
 namespace DelegationPokerApp.Dtos
 {
-    public class TeamMemberDto
+    public class TeamDto
     {
-        public TeamMemberDto(DelegationPokerApp.Models.TeamMember entity)
+        public TeamDto(DelegationPokerApp.Models.Team entity)
         {
             this.Id = entity.Id;
             this.Name = entity.Name;
         }
 
-        public TeamMemberDto()
+        public TeamDto()
         {
             
         }
