@@ -194,48 +194,135 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="config\gulpfile.config.js" />
+    <Content Include="config\karma.conf.js" />
+    <Content Include="config\webpack.config.js" />
+    <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
-    <Content Include="src\app\app-properties\app-property.component.scss" />
+    <Content Include="src\app\admin-app.component.html">
+      <DependentUpon>admin-app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\admin-app.component.scss">
+      <DependentUpon>admin-app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-properties-container.component.html">
+      <DependentUpon>app-properties-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-property-editor.component.html">
+      <DependentUpon>app-property-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-property-list.component.html">
+      <DependentUpon>app-property-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-property.component.html">
+      <DependentUpon>app-property.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-property.component.scss">
+      <DependentUpon>app-property.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app.component.html">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app.component.scss">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.html">
+      <DependentUpon>delegation-dashboard-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-list.component.html">
+      <DependentUpon>delegation-dashboard-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard.component.html">
+      <DependentUpon>delegation-dashboard.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard.component.scss">
+      <DependentUpon>delegation-dashboard.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.html">
+      <DependentUpon>delegation-dashboards-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situation-editor.component.scss">
+      <DependentUpon>situation-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situation-list.component.html">
+      <DependentUpon>situation-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situation-list.component.scss">
+      <DependentUpon>situation-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situations-container.component.scss">
+      <DependentUpon>situations-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-property-editor.component.scss">
+      <DependentUpon>app-property-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-property-list.component.scss">
+      <DependentUpon>app-property-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app-properties\app-properties-container.component.scss">
+      <DependentUpon>app-properties-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-list.component.scss">
+      <DependentUpon>delegation-dashboard-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.scss">
+      <DependentUpon>delegation-dashboard-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.scss">
+      <DependentUpon>delegation-dashboards-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\team-editor.component.scss">
+      <DependentUpon>team-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\team-list.component.scss">
+      <DependentUpon>team-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\teams-container.component.scss">
+      <DependentUpon>teams-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="typings\globals\angular-mocks\typings.json" />
+    <Content Include="typings\globals\angular-route\typings.json" />
+    <Content Include="typings\globals\angular\typings.json" />
+    <Content Include="typings\globals\fastclick\typings.json" />
+    <Content Include="typings\globals\jasmine\typings.json" />
+    <Content Include="typings\globals\jquery\typings.json" />
+    <Content Include="typings\globals\require\typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="src\app\app-properties\app-property-editor.component.css" />
-    <Content Include="src\app\app-properties\app-property-editor.component.html" />
-    <Content Include="src\app\app-properties\app-property-list.component.css" />
-    <Content Include="src\app\app-properties\app-property-list.component.html" />
-    <Content Include="src\app\app-properties\app-property.component.html" />
-    <Content Include="src\app\app-properties\app-propertys-container.component.css" />
-    <Content Include="src\app\app-properties\app-propertys-container.component.html" />
-    <Content Include="src\app\situations\situations-container.component.css" />
-    <Content Include="src\app\situations\situations-container.component.html" />
-    <Content Include="src\app\situations\situation.component.scss" />
-    <Content Include="src\app\situations\situation.component.html" />
-    <Content Include="src\app\situations\situation-list.component.css" />
-    <Content Include="src\app\situations\situation-list.component.html" />
-    <Content Include="src\app\situations\situation-editor.component.css" />
-    <Content Include="src\app\situations\situation-editor.component.html" />
-    <Content Include="src\app\teams\teams-container.component.css" />
-    <Content Include="src\app\teams\teams-container.component.html" />
-    <Content Include="src\app\teams\team.component.scss" />
-    <Content Include="src\app\teams\team.component.html" />
-    <Content Include="src\app\teams\team-list.component.css" />
-    <Content Include="src\app\teams\team-list.component.html" />
-    <Content Include="src\app\teams\team-editor.component.css" />
-    <Content Include="src\app\teams\team-editor.component.html" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.css" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.html" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboard.component.scss" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboard.component.html" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboard-list.component.css" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboard-list.component.html" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.css" />
-    <Content Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.html" />
+    <Content Include="src\app\situations\situation-editor.component.html">
+      <DependentUpon>situation-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situation.component.html">
+      <DependentUpon>situation.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situation.component.scss">
+      <DependentUpon>situation.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\situations\situations-container.component.html">
+      <DependentUpon>situations-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\team-editor.component.html">
+      <DependentUpon>team-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\team-list.component.html">
+      <DependentUpon>team-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\team.component.html">
+      <DependentUpon>team.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\teams\team.component.scss">
+      <DependentUpon>team.component.ts</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="src\app\teams\teams-container.component.html">
+      <DependentUpon>teams-container.component.ts</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -249,18 +336,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\app-properties\app-properties.routes.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property-editor.component.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property-list.component.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property.action-creator.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property.actions.ts" />
-    <TypeScriptCompile Include="src\app\app-properties\app-property.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property.component.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property.model.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property.reducers.ts" />
     <TypeScriptCompile Include="src\app\app-properties\app-property.service.ts" />
-    <TypeScriptCompile Include="src\app\app-properties\app-propertys-container.component.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-properties-container.component.ts" />
     <TypeScriptCompile Include="src\app\app-properties\index.ts" />
-    <TypeScriptCompile Include="src\app\main.ts" />
+    <TypeScriptCompile Include="src\app\app.reducers.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboards.routes.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\situations\situation.model.ts" />
     <TypeScriptCompile Include="src\app\situations\index.ts" />
     <TypeScriptCompile Include="src\app\situations\situations-container.component.ts" />
@@ -268,10 +357,10 @@
     <TypeScriptCompile Include="src\app\situations\situation.action-creator.ts" />
     <TypeScriptCompile Include="src\app\situations\situation.reducers.ts" />
     <TypeScriptCompile Include="src\app\situations\situation.component.ts" />
-    <TypeScriptCompile Include="src\app\situations\situation.component.spec.ts" />
     <TypeScriptCompile Include="src\app\situations\situation.service.ts" />
     <TypeScriptCompile Include="src\app\situations\situation-list.component.ts" />
     <TypeScriptCompile Include="src\app\situations\situation-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\situations\situations.routes.ts" />
     <TypeScriptCompile Include="src\app\teams\team.model.ts" />
     <TypeScriptCompile Include="src\app\teams\index.ts" />
     <TypeScriptCompile Include="src\app\teams\teams-container.component.ts" />
@@ -279,7 +368,6 @@
     <TypeScriptCompile Include="src\app\teams\team.action-creator.ts" />
     <TypeScriptCompile Include="src\app\teams\team.reducers.ts" />
     <TypeScriptCompile Include="src\app\teams\team.component.ts" />
-    <TypeScriptCompile Include="src\app\teams\team.component.spec.ts" />
     <TypeScriptCompile Include="src\app\teams\team.service.ts" />
     <TypeScriptCompile Include="src\app\teams\team-list.component.ts" />
     <TypeScriptCompile Include="src\app\teams\team-editor.component.ts" />
@@ -290,15 +378,28 @@
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.action-creator.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.reducers.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.component.ts" />
-    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.component.spec.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.service.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard-list.component.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\teams\teams.routes.ts" />
+    <TypeScriptCompile Include="typings\globals\angular-mocks\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\angular-route\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\angular\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\fastclick\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\require\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\rx\rx.all.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\admin-app.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\assets\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
