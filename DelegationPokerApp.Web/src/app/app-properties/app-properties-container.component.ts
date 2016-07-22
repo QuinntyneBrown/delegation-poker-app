@@ -17,13 +17,13 @@ import { AppProperty } from "./app-property.model";
     if (appPropertyId) { promises.push(invokeAsync({ action: appPropertyActionCreator.getById, params: { id: appPropertyId } })) };
     return $q.all(promises);
 }])
-export class AppPropertysContainerComponent { 
+export class AppPropertiesContainerComponent { 
     constructor(private $location: angular.ILocationService, private $routeParams: angular.route.IRouteParamsService, private appPropertyActionCreator: AppPropertyActionCreator, private _invokeAsync) { }
     storeOnChange = state => {        
         this.entities = state.appPropertys;
 
 		if (state.lastTriggeredByAction instanceof actions.SetCurrentAppPropertyAction && !state.lastTriggeredByAction.entity) 
-            this.$location.path("/admin/apppropertys");
+            this.$location.path("/admin/appproperties");
 
         if (state.lastTriggeredByAction instanceof actions.SetCurrentAppPropertyAction && state.lastTriggeredByAction.entity) 
             this.$location.path("/admin/appproperty/edit/" + state.lastTriggeredByAction.entity.id);
@@ -33,7 +33,7 @@ export class AppPropertysContainerComponent {
 
         if (state.lastTriggeredByAction instanceof actions.RemoveAppPropertyAction && this.entity && this.entity.id) {
             this.entity = pluck({ value: Number(this.$routeParams["appPropertyId"]), items: this.entities }) as AppProperty;
-            if (Object.keys(this.entity).length === 0) { this.$location.path("/admin/apppropertys"); }
+            if (Object.keys(this.entity).length === 0) { this.$location.path("/admin/appproperties"); }
         }
     }
 
@@ -53,10 +53,10 @@ export class AppPropertysContainerComponent {
             action: this.appPropertyActionCreator.addOrUpdate,
             params: { data: options.data }
         }).then(() => {
-            if (this.$location.path() === "/admin/apppropertys") {
+            if (this.$location.path() === "/admin/appproperties") {
                 this.entity = new AppProperty();
             } else {
-                this.$location.path("/admin/apppropertys")
+                this.$location.path("/admin/appproperties")
             }
         });        
     };

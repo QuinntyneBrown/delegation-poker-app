@@ -6,6 +6,4 @@ import { CanActivate, ChangeDetectionStrategy, Component } from "angular-rx-ui/s
     selector: "admin-app",
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdminAppComponent {
-    constructor() { }
-}
+export class AdminAppComponent { }

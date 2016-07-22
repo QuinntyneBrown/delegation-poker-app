@@ -2,8 +2,8 @@
 
 //import * as reducers from "./app/app.reducers";
 
-//import { ContactsRoutes } from "./app/contacts";
-
+import { AppPropertiesRoutes } from "./app/app-properties";
+import { DelegationDashboardsRoutes } from "./app/delegation-dashboards";
 
 import { provide, provideRoutePromise, bootstrap } from "angular-rx-ui/src/components/core";
 import { authorizationGuard } from "angular-rx-ui/src/components/routing/authorization-guard";
@@ -29,6 +29,7 @@ bootstrap(appModule, {
     run: [routeChangeSuccessIsAdminReducer],
     //reducers: reducers,
     routes: [
-//        ...ContactsRoutes,
+        ...AppPropertiesRoutes,
+        ...DelegationDashboardsRoutes
     ]
 });

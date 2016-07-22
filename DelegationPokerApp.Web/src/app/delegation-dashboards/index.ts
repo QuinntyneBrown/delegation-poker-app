@@ -8,7 +8,7 @@ import { DelegationDashboardService } from "./delegation-dashboard.service";
 import *  as reducers from "./delegation-dashboard.reducers";
 import *  as actions from "./delegation-dashboard.actions";
 
-const appDelegationDashboardsModule = angular.module("app.delegation-dashboards", []);
+const appDelegationDashboardsModule = angular.module("app.delegationDashboards", []);
 
 bootstrap(appDelegationDashboardsModule, {
     components: [DelegationDashboardComponent, DelegationDashboardEditorComponent, DelegationDashboardsContainerComponent, DelegationDashboardListComponent],
@@ -17,4 +17,4 @@ bootstrap(appDelegationDashboardsModule, {
     actions: actions
 });
 
-export * from "./delegationDashboards.routes";
+export * from "./delegation-dashboards.routes";
