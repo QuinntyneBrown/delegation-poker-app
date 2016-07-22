@@ -1,0 +1,7 @@
+namespace DelegationPokerApp.Utilities
+{
+    public interface ILoggerProvider
+    {
+        ILogger CreateLogger(string name);
+    }
+}
