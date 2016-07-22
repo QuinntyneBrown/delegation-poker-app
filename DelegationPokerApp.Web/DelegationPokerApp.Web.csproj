@@ -241,6 +241,21 @@
     <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.html">
       <DependentUpon>delegation-dashboards-container.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\digital-assets\digital-asset-editor.component.html">
+      <DependentUpon>digital-asset-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-asset-list.component.html">
+      <DependentUpon>digital-asset-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-asset.component.html">
+      <DependentUpon>digital-asset.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-asset.component.scss">
+      <DependentUpon>digital-asset.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-assets-container.component.html">
+      <DependentUpon>digital-assets-container.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\situations\situation-editor.component.scss">
       <DependentUpon>situation-editor.component.ts</DependentUpon>
     </Content>
@@ -287,6 +302,17 @@
     <Content Include="typings\globals\jasmine\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
     <Content Include="typings\globals\require\typings.json" />
+    <Content Include="src\app\digital-assets\digital-asset-editor.component.scss">
+      <DependentUpon>digital-asset-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-asset-list.component.scss">
+      <DependentUpon>digital-asset-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\digital-assets\digital-assets-container.component.scss">
+      <DependentUpon>digital-assets-container.component.ts</DependentUpon>
+    </Content>
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -349,6 +375,7 @@
     <TypeScriptCompile Include="src\app\app-properties\index.ts" />
     <TypeScriptCompile Include="src\app\app.reducers.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboards.routes.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-assets.routes.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\situations\situation.model.ts" />
     <TypeScriptCompile Include="src\app\situations\index.ts" />
@@ -393,6 +420,16 @@
     <TypeScriptCompile Include="typings\index.d.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\admin-app.component.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset.model.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\index.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-assets-container.component.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset.actions.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset.reducers.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset.component.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset.service.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset-list.component.ts" />
+    <TypeScriptCompile Include="src\app\digital-assets\digital-asset-editor.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

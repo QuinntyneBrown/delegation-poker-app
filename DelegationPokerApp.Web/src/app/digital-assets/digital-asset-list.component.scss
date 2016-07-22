@@ -1,0 +1,22 @@
+.digitalAssetList-name,
+.digitalAssetList-actions {
+    position:relative;
+    float:left;
+}
+
+.digitalAssetList-name {
+    min-width:200px;
+}
+
+.digitalAssetList-item {
+    height:50px;
+}
+
+.digitalAssetList-actions span {
+    cursor:pointer;
+}
+
+.digitalAssetList-actions {
+    text-transform: uppercase;
+}
+   
