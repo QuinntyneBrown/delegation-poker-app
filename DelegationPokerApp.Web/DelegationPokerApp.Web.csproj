@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -193,12 +195,44 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="src\app\app-properties\app-property.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="src\app\app-properties\app-property-editor.component.css" />
+    <Content Include="src\app\app-properties\app-property-editor.component.html" />
+    <Content Include="src\app\app-properties\app-property-list.component.css" />
+    <Content Include="src\app\app-properties\app-property-list.component.html" />
+    <Content Include="src\app\app-properties\app-property.component.html" />
+    <Content Include="src\app\app-properties\app-propertys-container.component.css" />
+    <Content Include="src\app\app-properties\app-propertys-container.component.html" />
+    <Content Include="src\app\situations\situations-container.component.css" />
+    <Content Include="src\app\situations\situations-container.component.html" />
+    <Content Include="src\app\situations\situation.component.scss" />
+    <Content Include="src\app\situations\situation.component.html" />
+    <Content Include="src\app\situations\situation-list.component.css" />
+    <Content Include="src\app\situations\situation-list.component.html" />
+    <Content Include="src\app\situations\situation-editor.component.css" />
+    <Content Include="src\app\situations\situation-editor.component.html" />
+    <Content Include="src\app\teams\teams-container.component.css" />
+    <Content Include="src\app\teams\teams-container.component.html" />
+    <Content Include="src\app\teams\team.component.scss" />
+    <Content Include="src\app\teams\team.component.html" />
+    <Content Include="src\app\teams\team-list.component.css" />
+    <Content Include="src\app\teams\team-list.component.html" />
+    <Content Include="src\app\teams\team-editor.component.css" />
+    <Content Include="src\app\teams\team-editor.component.html" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.css" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboards-container.component.html" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard.component.scss" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard.component.html" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-list.component.css" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-list.component.html" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.css" />
+    <Content Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
@@ -214,11 +248,63 @@
       <Name>DelegationPokerApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\app-properties\app-property-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property-list.component.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.actions.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.component.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.model.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.reducers.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-property.service.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\app-propertys-container.component.ts" />
+    <TypeScriptCompile Include="src\app\app-properties\index.ts" />
+    <TypeScriptCompile Include="src\app\main.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.model.ts" />
+    <TypeScriptCompile Include="src\app\situations\index.ts" />
+    <TypeScriptCompile Include="src\app\situations\situations-container.component.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.actions.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.reducers.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.component.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation.service.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation-list.component.ts" />
+    <TypeScriptCompile Include="src\app\situations\situation-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.model.ts" />
+    <TypeScriptCompile Include="src\app\teams\index.ts" />
+    <TypeScriptCompile Include="src\app\teams\teams-container.component.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.actions.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.reducers.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.component.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\teams\team.service.ts" />
+    <TypeScriptCompile Include="src\app\teams\team-list.component.ts" />
+    <TypeScriptCompile Include="src\app\teams\team-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.model.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\index.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboards-container.component.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.actions.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.reducers.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard.service.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard-list.component.ts" />
+    <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboard-editor.component.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

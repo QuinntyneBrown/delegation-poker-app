@@ -1,0 +1,22 @@
+.appPropertyList-name,
+.appPropertyList-actions {
+    position:relative;
+    float:left;
+}
+
+.appPropertyList-name {
+    min-width:200px;
+}
+
+.appPropertyList-item {
+    height:50px;
+}
+
+.appPropertyList-actions span {
+    cursor:pointer;
+}
+
+.appPropertyList-actions {
+    text-transform: uppercase;
+}
+   

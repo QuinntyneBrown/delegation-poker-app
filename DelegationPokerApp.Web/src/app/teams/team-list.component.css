@@ -1,0 +1,22 @@
+.teamList-name,
+.teamList-actions {
+    position:relative;
+    float:left;
+}
+
+.teamList-name {
+    min-width:200px;
+}
+
+.teamList-item {
+    height:50px;
+}
+
+.teamList-actions span {
+    cursor:pointer;
+}
+
+.teamList-actions {
+    text-transform: uppercase;
+}
+   

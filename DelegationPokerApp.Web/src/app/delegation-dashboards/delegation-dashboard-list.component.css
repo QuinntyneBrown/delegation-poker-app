@@ -1,0 +1,22 @@
+.delegationDashboardList-name,
+.delegationDashboardList-actions {
+    position:relative;
+    float:left;
+}
+
+.delegationDashboardList-name {
+    min-width:200px;
+}
+
+.delegationDashboardList-item {
+    height:50px;
+}
+
+.delegationDashboardList-actions span {
+    cursor:pointer;
+}
+
+.delegationDashboardList-actions {
+    text-transform: uppercase;
+}
+   

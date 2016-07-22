@@ -1,0 +1,22 @@
+.situationList-name,
+.situationList-actions {
+    position:relative;
+    float:left;
+}
+
+.situationList-name {
+    min-width:200px;
+}
+
+.situationList-item {
+    height:50px;
+}
+
+.situationList-actions span {
+    cursor:pointer;
+}
+
+.situationList-actions {
+    text-transform: uppercase;
+}
+   

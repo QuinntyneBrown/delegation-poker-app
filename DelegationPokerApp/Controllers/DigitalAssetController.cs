@@ -1,48 +1,119 @@
+using DelegationPokerApp.Data;
 using DelegationPokerApp.Dtos;
+using DelegationPokerApp.Models;
 using DelegationPokerApp.Services;
+using DelegationPokerApp.UploadHandlers;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using WebApi.OutputCache.V2;
 
 namespace DelegationPokerApp.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/digitalAsset")]
+    [RoutePrefix("api/digitalasset")]
     public class DigitalAssetController : ApiController
     {
-        public DigitalAssetController(IDigitalAssetService digitalAssetService)
+        public DigitalAssetController(IDigitalAssetService DigitalAssetService, IUow uow, ICacheProvider cacheProvider)
         {
-            _digitalAssetService = digitalAssetService;
+            _DigitalAssetService = DigitalAssetService;
+            _uow = uow;
+            _repository = uow.DigitalAssets;
+            _cache = cacheProvider.GetCache();
         }
 
         [Route("add")]
         [HttpPost]
         [ResponseType(typeof(DigitalAssetAddOrUpdateResponseDto))]
-        public IHttpActionResult Add(DigitalAssetAddOrUpdateRequestDto dto) { return Ok(_digitalAssetService.AddOrUpdate(dto)); }
+        public IHttpActionResult Add(DigitalAssetAddOrUpdateRequestDto dto) { return Ok(_DigitalAssetService.AddOrUpdate(dto)); }
 
         [Route("update")]
         [HttpPut]
         [ResponseType(typeof(DigitalAssetAddOrUpdateResponseDto))]
-        public IHttpActionResult Update(DigitalAssetAddOrUpdateRequestDto dto) { return Ok(_digitalAssetService.AddOrUpdate(dto)); }
+        public IHttpActionResult Update(DigitalAssetAddOrUpdateRequestDto dto) { return Ok(_DigitalAssetService.AddOrUpdate(dto)); }
 
         [Route("get")]
         [AllowAnonymous]
         [HttpGet]
         [ResponseType(typeof(ICollection<DigitalAssetDto>))]
-        public IHttpActionResult Get() { return Ok(_digitalAssetService.Get()); }
+        public IHttpActionResult Get() { return Ok(_DigitalAssetService.Get()); }
 
         [Route("getById")]
         [HttpGet]
         [ResponseType(typeof(DigitalAssetDto))]
-        public IHttpActionResult GetById(int id) { return Ok(_digitalAssetService.GetById(id)); }
+        public IHttpActionResult GetById(int id) { return Ok(_DigitalAssetService.GetById(id)); }
 
         [Route("remove")]
         [HttpDelete]
         [ResponseType(typeof(int))]
-        public IHttpActionResult Remove(int id) { return Ok(_digitalAssetService.Remove(id)); }
+        public IHttpActionResult Remove(int id) { return Ok(_DigitalAssetService.Remove(id)); }
 
-        protected readonly IDigitalAssetService _digitalAssetService;
+        [AllowAnonymous]
+        [Route("upload")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> Upload(HttpRequestMessage request)
+        {
+            var DigitalAssets = new List<DigitalAsset>();
+            try
+            {
+                if (!Request.Content.IsMimeMultipartContent("form-data"))
+                    throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+                var provider = await Request.Content.ReadAsMultipartAsync(new InMemoryMultipartFormDataStreamProvider());
 
+                NameValueCollection formData = provider.FormData;
+                IList<HttpContent> files = provider.Files;
+
+                foreach (var file in files)
+                {
+                    var filename = new FileInfo(file.Headers.ContentDisposition.FileName.Trim(new char[] { '"' })
+                        .Replace("&", "and")).Name;
+                    Stream stream = await file.ReadAsStreamAsync();
+                    var bytes = StreamHelper.ReadToEnd(stream);
+                    var DigitalAsset = new DigitalAsset();
+                    DigitalAsset.FileName = filename;
+                    DigitalAsset.Bytes = bytes;
+                    DigitalAsset.ContentType = System.Convert.ToString(file.Headers.ContentType);
+                    _repository.Add(DigitalAsset);
+                    DigitalAssets.Add(DigitalAsset);
+                }
+
+                _uow.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+                var e = exception;
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, new DigitalAssetUploadResponseDto(DigitalAssets));
+        }
+
+        [Route("serve")]
+        [HttpGet]
+        [AllowAnonymous]
+        [CacheOutput(ClientTimeSpan = 1000, ServerTimeSpan = 1000)]
+        public HttpResponseMessage Serve([FromUri]Guid uniqueId, int? height = null)
+        {
+            DigitalAsset DigitalAsset = _cache.FromCacheOrService(() => _repository.GetAll().FirstOrDefault(x => x.UniqueId == uniqueId), uniqueId.ToString());
+            HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
+            if (DigitalAsset == null)
+                return result;
+            result.Content = new ByteArrayContent(DigitalAsset.Bytes);
+            result.Content.Headers.ContentType = new MediaTypeHeaderValue(DigitalAsset.ContentType);
+            return result;
+        }
+
+        protected readonly IDigitalAssetService _DigitalAssetService;
+        protected readonly IRepository<DigitalAsset> _repository;
+        protected readonly IUow _uow;
+        protected readonly ICache _cache;
     }
 }

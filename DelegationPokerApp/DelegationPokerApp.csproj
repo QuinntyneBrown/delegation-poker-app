@@ -194,6 +194,7 @@
     <Compile Include="Data\RepositoryProvider.cs" />
     <Compile Include="Data\Uow.cs" />
     <Compile Include="Dtos\ActionDto.cs" />
+    <Compile Include="Dtos\DigitalAssetUploadResponseDto.cs" />
     <Compile Include="Dtos\RegistrationRequestDto.cs" />
     <Compile Include="Dtos\RegistrationResponseDto.cs" />
     <Compile Include="Dtos\TokenDto.cs" />
@@ -222,6 +223,9 @@
     <Compile Include="Services\IIdentityService.cs" />
     <Compile Include="Services\MemoryCache.cs" />
     <Compile Include="UnityConfiguration.cs" />
+    <Compile Include="UploadHandlers\FileMultipartFormDataStreamProvider.cs" />
+    <Compile Include="UploadHandlers\InMemoryMultipartFormDataStreamProvider.cs" />
+    <Compile Include="UploadHandlers\StreamHelper.cs" />
     <Compile Include="Utilities\ILogger.cs" />
     <Compile Include="Utilities\ILoggerFactory.cs" />
     <Compile Include="Utilities\ILoggerProvider.cs" />
@@ -291,7 +295,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Trace\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
