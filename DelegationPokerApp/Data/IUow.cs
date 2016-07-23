@@ -14,6 +14,7 @@ namespace DelegationPokerApp.Data
         IRepository<Team> Teams { get; }
         IRepository<TeamMember> TeamMembers { get; }
         IRepository<User> Users { get; }
+        IRepository<YouTubeVideo> YouTubeVideos { get; }
         void SaveChanges();
     }
 }

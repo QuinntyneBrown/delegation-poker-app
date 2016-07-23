@@ -36,6 +36,7 @@ namespace DelegationPokerApp.Data
         public IRepository<Team> Teams { get { return GetStandardRepo<Models.Team>(); } }
         public IRepository<TeamMember> TeamMembers { get { return GetStandardRepo<Models.TeamMember>(); } }
         public IRepository<User> Users { get { return GetStandardRepo<Models.User>(); } }
+        public IRepository<YouTubeVideo> YouTubeVideos { get { return GetStandardRepo<Models.YouTubeVideo>(); } }
 
         protected void ConfigureDbContext(IDbContext dbContext)
         {

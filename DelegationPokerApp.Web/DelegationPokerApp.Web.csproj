@@ -295,6 +295,21 @@
     <Content Include="src\app\teams\teams-container.component.scss">
       <DependentUpon>teams-container.component.ts</DependentUpon>
     </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-video-editor.component.html">
+      <DependentUpon>you-tube-video-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-video-list.component.html">
+      <DependentUpon>you-tube-video-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-video.component.html">
+      <DependentUpon>you-tube-video.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-video.component.scss">
+      <DependentUpon>you-tube-video.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-videos-container.component.html">
+      <DependentUpon>you-tube-videos-container.component.ts</DependentUpon>
+    </Content>
     <Content Include="typings\globals\angular-mocks\typings.json" />
     <Content Include="typings\globals\angular-route\typings.json" />
     <Content Include="typings\globals\angular\typings.json" />
@@ -313,6 +328,15 @@
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
+    <Content Include="src\app\you-tube-videos\you-tube-video-editor.component.scss">
+      <DependentUpon>you-tube-video-editor.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-video-list.component.scss">
+      <DependentUpon>you-tube-video-list.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\you-tube-videos\you-tube-videos-container.component.scss">
+      <DependentUpon>you-tube-videos-container.component.ts</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -376,6 +400,8 @@
     <TypeScriptCompile Include="src\app\app.reducers.ts" />
     <TypeScriptCompile Include="src\app\delegation-dashboards\delegation-dashboards.routes.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-assets.routes.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.routes.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-videos.routes.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\situations\situation.model.ts" />
     <TypeScriptCompile Include="src\app\situations\index.ts" />
@@ -430,6 +456,16 @@
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset.service.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-list.component.ts" />
     <TypeScriptCompile Include="src\app\digital-assets\digital-asset-editor.component.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.model.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\index.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-videos-container.component.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.actions.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.reducers.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.component.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video.service.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video-list.component.ts" />
+    <TypeScriptCompile Include="src\app\you-tube-videos\you-tube-video-editor.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

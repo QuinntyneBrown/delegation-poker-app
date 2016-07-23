@@ -3,6 +3,7 @@
 //import * as reducers from "./app/app.reducers";
 
 import { AppPropertiesRoutes } from "./app/app-properties";
+import { YouTubeVideosRoutes } from "./app/you-tube-videos";
 import { DelegationDashboardsRoutes } from "./app/delegation-dashboards";
 
 import { provide, provideRoutePromise, bootstrap } from "angular-rx-ui/src/components/core";
@@ -30,6 +31,7 @@ bootstrap(appModule, {
     //reducers: reducers,
     routes: [
         ...AppPropertiesRoutes,
-        ...DelegationDashboardsRoutes
+        ...DelegationDashboardsRoutes,
+        ...YouTubeVideosRoutes
     ]
 });

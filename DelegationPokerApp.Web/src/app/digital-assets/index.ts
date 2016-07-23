@@ -8,7 +8,7 @@ import { DigitalAssetService } from "./digital-asset.service";
 import *  as reducers from "./digital-asset.reducers";
 import *  as actions from "./digital-asset.actions";
 
-const appDigitalAssetsModule = angular.module("app.digital-assets", []);
+const appDigitalAssetsModule = angular.module("app.digitalAssets", []);
 
 bootstrap(appDigitalAssetsModule, {
     components: [DigitalAssetComponent, DigitalAssetEditorComponent, DigitalAssetsContainerComponent, DigitalAssetListComponent],
@@ -17,4 +17,4 @@ bootstrap(appDigitalAssetsModule, {
     actions: actions
 });
 
-export * from "./digitalAssets.routes";
+export * from "./digital-assets.routes";

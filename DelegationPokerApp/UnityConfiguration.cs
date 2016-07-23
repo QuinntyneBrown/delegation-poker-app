@@ -31,6 +31,7 @@ namespace DelegationPokerApp
             container.RegisterType<ITeamService, TeamService>();
             container.RegisterType<ITeamMemberService, TeamMemberService>();
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IYouTubeVideoService, YouTubeVideoService>();
 
             container.RegisterInstance(AuthConfiguration.LazyConfig);            
             return container;

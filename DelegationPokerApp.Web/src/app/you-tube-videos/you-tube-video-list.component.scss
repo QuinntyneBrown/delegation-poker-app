@@ -1,0 +1,22 @@
+.youTubeVideoList-name,
+.youTubeVideoList-actions {
+    position:relative;
+    float:left;
+}
+
+.youTubeVideoList-name {
+    min-width:200px;
+}
+
+.youTubeVideoList-item {
+    height:50px;
+}
+
+.youTubeVideoList-actions span {
+    cursor:pointer;
+}
+
+.youTubeVideoList-actions {
+    text-transform: uppercase;
+}
+   

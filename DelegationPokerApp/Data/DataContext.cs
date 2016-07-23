@@ -23,6 +23,7 @@ namespace DelegationPokerApp.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<TeamMember> TeamMembers { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<YouTubeVideo> YouTubeVideos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
